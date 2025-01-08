@@ -1,0 +1,23 @@
+{
+    "Student": {
+        "Name": "shivaparavatahidevi",
+        "Age": 1000000,
+        "Address":{
+            "current":{
+                "Street":"main",
+                "place": "all",
+                "state": "ap",
+                "zip":"1001"
+            },
+            "perm": {
+                "Street":"main",
+                "place": "all",
+                "state": "ap",
+                "zip":"1003"
+            }
+                
+            }
+        }
+
+        
+    }

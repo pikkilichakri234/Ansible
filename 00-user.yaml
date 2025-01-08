@@ -1,0 +1,13 @@
+Student:
+- name: shivavishnu
+  age: 200000
+  Address:
+  - current:
+      street: main
+      city: pamuru
+      place: shivalayam
+  - perm:
+      street: main
+      city: pamuru
+      place: venugopalam
+      

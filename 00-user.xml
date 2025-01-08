@@ -1,0 +1,18 @@
+<student>
+   <Name>omnamahashivaya</Name>
+   <age>1000000</age>
+   <Adrress>
+        <current>
+            <street>1001</street>
+            <city>Kasi</city>
+            <place>kailasagiri</place>
+            <zip>236777</zip>
+        </current>
+       <perm>
+            <street>1033</street>
+            <city>ujjaini</city>
+            <place>viswam</place>
+            <zip>236655</zip>
+       </perm>
+   </Adrress>
+</student>
