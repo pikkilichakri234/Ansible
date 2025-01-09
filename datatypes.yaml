@@ -1,0 +1,29 @@
+# datatypes like number(float, integer,decimal), boolean(true or false), list(-),map(key:value),set,string ..
+- name: to list the datatypes in ansible
+  host: om
+  vars:
+    my_integer: 20
+    my_float: 12.5
+    my_boolean: true
+    my_list:       # list contains order collection of items , it contain duplicate values allowed , it access index format (0,1,2....)
+      - omnamahashivaya
+      - shivakesava
+      - paravatahi-parameswarayanamaha
+    my_map:
+      env: om
+      god: viswam
+    my_set:       # set contains unorder collection of unique items , it contain unique values allowed , it access not index format
+      - bramha-saraswathi
+      - vishnu-lakhmi
+      - maheswara-maheswari
+  tasks:
+    - name: to execute tasks through print variables
+      ansible.builtin.debug:
+        msg:
+          - "integer is: {{ my_integer }}"
+          - "float is: {{ my_float }}"
+          - "boolean is: {{my_boolean }}"
+          - "list is: {{ my_list }}"
+          - "map is: {{ my_map}}"
+          - "set is: {{ my_set }}"
+

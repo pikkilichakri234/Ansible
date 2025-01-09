@@ -1,0 +1,23 @@
+- name: to list the datatypes
+  hosts: local
+  connection: local
+  vars:
+    course: omnamahashivaya  # string
+    duration: 10000000  # number
+    topics:  #list []
+      - all
+      - DeVops
+      - Multi-cloud
+      - god 
+   live: true # boolean
+   tools:  #map {}
+     ci: jenkins
+     containerization: Docker
+     cloud: aws
+     viswam: omnamahashivaya
+  tasks:
+    - name: to print messages
+      ansible.builtin.debug:
+        msg: "om hello it is course is {{ course }}, duration is {{ duration }}, topics is {{ topics }}, live is {{ live }}, tools are {{ tools }}"
+
+

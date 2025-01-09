@@ -1,0 +1,11 @@
+- name: To list variables
+  hosts: om
+  vars:
+    COURSE: omnamahashivaya
+    TRAINER: viswanatha
+    DURATION: 100000000000 # number
+    LIVE: true # boolean
+  tasks:
+    - name: Print the information
+      ansible.builtin.debug:
+        msg: "OM: The course is {{ COURSE }}, trainer is {{ TRAINER }}, duration is {{ DURATION }}, live: {{ LIVE }}"

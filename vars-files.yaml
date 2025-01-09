@@ -1,0 +1,10 @@
+- name: variables from files
+  host: local
+  connection: local
+  vars_files:
+    - omvars.yaml
+  tasks:
+    - name: to print the information
+      ansible.builtin.debug:
+        msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
+      
