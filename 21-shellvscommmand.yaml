@@ -1,0 +1,21 @@
+- name: shell vs Command
+  hosts: local
+  connection: local
+  tasks:
+  - name: execute ls command
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt # to perform action on shell env
+  - name: execute ls command in command module
+    #ansible.builtin.command: ls -ltr > /tmp/output.txt
+    #ansible.builtin.command: ls -ltr
+    ansible.builtin.command: lsss -ltrssfff # to perform action on command level
+    register: command_result
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "{{ command_result }}"
+
+  - name: execute raw command  #The raw module is typically used for managing non-Python environments or performing low-level tasks.
+    ansible.builtin.raw: ls -ltr
+    register: raw_command_result
+  - name: print the output of the raw command
+    ansible.builtin.debug:
+      msg: "{{ raw_command_result.stdout_lines }}"

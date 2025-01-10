@@ -1,0 +1,12 @@
+- name: loops
+  hosts: om
+  tasks:
+  - name: to install pkgs
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: installed
+    loop:
+    - gcc
+    - git
+    - maven
+    - docker

@@ -1,0 +1,6 @@
+- name: to print the facts in our node
+  hosts: web
+  tasks:
+  - name: print a message
+    ansible.builtin.debug:
+      msg: "server name:{{ ansible_nodename }}, os is{{ ansible_system }}, the flavours is {{ ansible_os_family }}, pkg is {{ ansible_pkg_mgr}}, cpu is {{ ansible_processor_vcpus }}, total ram is {{ ansible_memtotal_mb}}, free ram is {{ ansible_memfree_mb}}"

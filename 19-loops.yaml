@@ -1,0 +1,11 @@
+- name: loops
+  hosts: om
+  tasks:
+  - name: to install pkgs
+    ansible.builtin.package:
+      name: "{{ item.loop }}"
+      state: "{{item.state}}"
+    loop:
+    - {name:'git', state:'present'}
+    - {name:'zip', state:'latest'}
+    - {name:'docker', state:'absent'}

@@ -1,0 +1,13 @@
+- name: loops
+  hosts: om
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+      msg: "Hello {{ item }}"
+    loop:
+    - omnamahashivaya
+    - haraharamahdeva
+    - omnamonarayanaya
+    - omsrimatrenamaha
+      
+
