@@ -1,13 +1,19 @@
-- name: nginx server install and start
+- name: Nginx server install and start
   hosts: om
-  become: yes # -b :become root user (sudo access)
+  become: yes # Use sudo access
+  vars:
+    nginx_port: 80
   tasks:
-  - name: install nginx server
-    ansible.builtin.package:
-      name: nginx
-      state: present
-  - name:  start the nginx service
-    ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes
+    - name: Install Nginx server
+      ansible.builtin.package:
+        name: nginx
+        state: present
+      notify: 
+        - start nginx
+
+  handlers:
+    - name: Start Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes

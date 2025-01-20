@@ -1,0 +1,23 @@
+---
+- name: install and configure apache httpd server
+  hosts: om # specify your target host group
+  become: true # sudo access with root previliges
+  vars:
+    name: "omnamahashivaya"
+    location: "kailasagiri"
+  tasks:
+  - name: install httpd server
+    ansible.builtin.package:
+      name: nginx
+      state: present
+
+  - name: start the httpd service and enabled
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+  - name: copy custom index.html to webserver host
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
