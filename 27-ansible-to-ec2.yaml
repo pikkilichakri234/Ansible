@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - name: creating ec2 instance
+      ec2:
+        region: "us-east-1"
+        count: 3
+        image: "ami-0ac4dfaf1c5c0cce9"
+        instance_type: "t2.micro"
+        instance_tags:
+          Name: "om1233"
