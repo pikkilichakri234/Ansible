@@ -7,10 +7,6 @@
     ansible.builtin.package:
       name: nginx
       state: present
-  - name: run nginx
-    tags:
-    - omnamahashivaya
-
   - name: configure service
     ansible.builtin.service:
       name: nginx
