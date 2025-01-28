@@ -1,10 +1,10 @@
 - name: Error Handling
   hosts: all
-  become: yess
+  become: yes
   tasks:
     - name: Fail this command
       ansible.builtin.shell:
-        cmd: exit 0
+        cmd: exit 1
       ignore_errors: true
 
     - name: Print Hello
