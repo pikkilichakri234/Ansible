@@ -3,13 +3,23 @@
   become: yes
   strategy: linear    # free strategy allows to tasks run on indpendent and  parallel on different hosts.
   tasks:
-    - name: Install NGINX
-      ansible.builtin.yum:
-        name: nginx
-        state: present
+    # - name: Install NGINX
+    #   ansible.builtin.yum:
+    #     name: nginx
+    #     state: present
 
-    - name: Start and enable NGINX service
-      ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: true
+    # - name: Start and enable NGINX service
+    #   ansible.builtin.service:
+    #     name: nginx
+    #     state: started
+    #     enabled: true
+  - name: install httpd
+    ansible.builtin.yum:
+      name: httpd
+      state: present
+
+  - name: start and enable httpd service
+    ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: true
