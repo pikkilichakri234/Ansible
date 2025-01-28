@@ -1,0 +1,11 @@
+- name: Debug Strategy Example
+  hosts: all
+  strategy: debug
+  tasks:
+    - name: Check uptime
+      ansible.builtin.command:
+        cmd: uptime
+
+    - name: Display free memory
+      ansible.builtin.command:
+        cmd: free -m
