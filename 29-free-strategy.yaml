@@ -1,5 +1,6 @@
 - name: Example of Free Strategy in Ansible
   hosts: all
+  become: yes
   strategy: free     # free strategy allows to tasks run on indpendent and  parallel on different hosts.
   tasks:
     - name: Install NGINX
