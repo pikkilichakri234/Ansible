@@ -1,0 +1,15 @@
+- name: Example of Free Strategy in Ansible
+  hosts: all
+  become: yes
+  strategy: linears    # free strategy allows to tasks run on indpendent and  parallel on different hosts.
+  tasks:
+    - name: Install NGINX
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+
+    - name: Start and enable NGINX service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
