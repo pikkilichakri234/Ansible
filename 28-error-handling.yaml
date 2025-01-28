@@ -1,6 +1,6 @@
 - name: Error Handling
-  hosts: localhost
-  connection: local
+  hosts: all
+  become: yess
   tasks:
     - name: Fail this command
       ansible.builtin.shell:
@@ -9,4 +9,4 @@
 
     - name: Print Hello
       ansible.builtin.debug:
-        msg: "Hello"
+        msg: "Hello, om namaha shivaya"
