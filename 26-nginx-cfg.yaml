@@ -1,7 +1,7 @@
 - name: install configurations
-  hosts: web
+  hosts: all
   become: yes
-  serial: 8
+  #serial: 8
   tasks:
   - name: install nginx
     ansible.builtin.package:
