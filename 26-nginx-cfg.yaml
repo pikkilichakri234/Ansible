@@ -9,7 +9,7 @@
       state: present
   - name: run nginx
     tags:
-    - run nginx  
+    - omnamahashivaya
 
   - name: configure service
     ansible.builtin.service:
