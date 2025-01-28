@@ -1,0 +1,20 @@
+- name: Install NGINX asynchronously
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install NGINX
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+      async: 3600  # Maximum time to run the task (1 hour)
+      poll: 0  # Do not wait, continue with the next task immediately
+
+    - name: Start and enable NGINX service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Display message indicating NGINX installation started
+      ansible.builtin.debug:
+        msg: "NGINX installation started asynchronously. The playbook is continuing without waiting."
