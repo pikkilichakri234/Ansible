@@ -1,0 +1,20 @@
+- name: Example of Free Strategy in Ansible
+  hosts: all
+  strategy: free     # free strategy allows to tasks run on indpendent and  parallel on different hosts.
+  tasks:
+    - name: Install NGINX
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+
+    - name: Start and enable NGINX service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    # - name: Deploy index.html
+    #   ansible.builtin.copy:
+    #     src: /path/to/index.html
+    #     dest: /usr/share/nginx/html/index.html
+
