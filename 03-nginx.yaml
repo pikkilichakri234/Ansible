@@ -1,5 +1,5 @@
 - name: Nginx server install and start
-  hosts: om
+  hosts: web
   become: yes # Use sudo access
   vars:
     nginx_port: 80
